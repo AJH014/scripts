@@ -17,3 +17,5 @@ proc lvt_swp {pt} {fic m [gfco $pt] {v "size_cell [gon $m] [string map {{SVT} "L
 ############################################################
 
 proc ult_swp {pt} {fic m [gfco $pt] {v "size_cell [gon $m] [string map {{LVT} "ULT"} [ga $m ref_name]]"}}
+
+proc cdisp {start_cell end_cell} { expr sqrt([expr abs([expr pow([expr abs([expr [lindex [ga [gc $start_cell] origin ] 0] - [lindex [ga [gc $end_cell] origin ] 0]])], 2)] - [expr pow([expr abs([expr [lindex [ga [gc $start_cell] origin ] 1] - [lindex [ga [gc $end_cell] origin ] 1]])], 2)])])}
